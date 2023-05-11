@@ -2,10 +2,6 @@
 	path = gulua/external/assimp
 	url = https://github.com/assimp/assimp.git
     branch = master
-[submodule "gulua/external/glad"]
-	path = gulua/external/glad
-	url = https://github.com/Dav1dde/glad.git
-    branch = c
 [submodule "gulua/external/glfw"]
 	path = gulua/external/glfw
 	url = https://github.com/glfw/glfw.git
@@ -22,3 +18,6 @@
 	path = gulua/external/bullet
 	url = https://github.com/bulletphysics/bullet3.git
     branch = master
+[submodule "gulua/external/glad"]
+	path = gulua/external/glad
+	url = https://github.com/Dav1dde/glad
