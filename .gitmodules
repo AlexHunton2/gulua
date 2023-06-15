@@ -22,3 +22,6 @@
 	path = gulua/external/glad
 	url = https://github.com/Dav1dde/glad
 	branch = c
+[submodule "gulua/external/lua"]
+	path = gulua/external/lua
+	url = https://github.com/lua/lua.git
