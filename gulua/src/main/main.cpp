@@ -9,7 +9,15 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include "luaAPI.hpp"
+
 int main(int argc, char * argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Error: Sorry! Need lua file to run!\n", argc);
+        exit(1);
+    }
+
+    const char* fileName = argv[1];
 
     // Load GLFW and Create a Window
     glfwInit();
@@ -30,6 +38,9 @@ int main(int argc, char * argv[]) {
     glfwMakeContextCurrent(mWindow);
     gladLoadGL();
     fprintf(stderr, "OpenGL %s\n", glGetString(GL_VERSION));
+
+    // Lua
+    luaAPI::loadLua(fileName);
 
     // Rendering Loop
     while (glfwWindowShouldClose(mWindow) == false) {
