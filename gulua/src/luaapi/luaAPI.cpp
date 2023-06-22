@@ -8,21 +8,18 @@ void luaAPI::loadLua(const char *fileName) {
 	// read in file
 	error = luaL_loadfile(luaState, fileName) || lua_pcall(luaState, 0, 0, 0);
     if (error) {
-        luaAPI::error(luaState, "Lua Error! file: %s\n", lua_tostring(luaState, -1));
-        //lua_pop(luaState, 1);
+        luaAPI::error(luaState, "Lua Error! file: %s\n", 
+        	lua_tostring(luaState, -1));
+        lua_pop(luaState, 1);
         exit(1);
     }
 
-    lua_getglobal(luaState, "Test");
-
-   	if (lua_pcall(luaState, 0, 1, 0) != LUA_OK) {
-   		luaAPI::error(luaState, "error running function 'f': %s", lua_tostring(luaState, -1));
-   	}
-
-   	int isnum;
-   	int z = lua_tonumberx(luaState, -1, &isnum);
+   	int x = 5;
+   	int y = 10;
+   	int z;
+   	luaAPI::call_globalfunction(luaState, "f", "ii>i", x, y, &z);
+   	printf("Result of z: %d\n", z);
    	lua_pop(luaState, 1);
-   	printf("Result of Test: %d\n", z);
 
 	luaAPI::stackDump(luaState);
 
@@ -65,4 +62,93 @@ void luaAPI::error(lua_State *L, const char *fmt, ...) {
     va_end(argp);
     lua_close(L);
     exit(1);
+}
+
+/*
+* @param lua_State
+* @param func - Name of the global function
+* @param sig - Format of the arguments/results 
+*	"d - double, i - integer, s - string"
+* @param ... - arguments + pointers to return values
+* please seperate arguments and return values with a >
+* example: "ii>i"
+* 
+* @note: up to caller to pop results from stack
+* 
+* @return nothing, but arguments are modified with return values
+* see pg. 243 of Lua book
+*/
+void luaAPI::call_globalfunction(lua_State *L, const char *func, 
+	const char *sig, ...) {
+	va_list vl;
+	int narg, nres;
+	va_start(vl, sig); // args and the last arguement
+	lua_getglobal(L, func);
+
+	// push arguments
+	for (narg = 0; *sig; narg++) {  /* repeat for each argument */
+          /* check stack space */
+          luaL_checkstack(L, 1, "too many arguments");
+          switch (*sig++) {
+            case 'd':  /* double argument */
+              lua_pushnumber(L, va_arg(vl, double));
+              break;
+            case 'i':  /* int argument */
+              lua_pushinteger(L, va_arg(vl, int));
+              break;
+            case 's':  /* string argument */
+              lua_pushstring(L, va_arg(vl, char *));
+              break;
+            case '>':  /* end of arguments */
+              goto endargs;  /* break the loop */
+            default:
+              error(L, "invalid option (%c)", *(sig - 1));
+          }
+	}
+	endargs:
+
+	nres = strlen(sig); // number of results
+
+	// do call
+	if (lua_pcall(L, narg, nres, 0) != 0) {
+		error(L, "error calling '%s': %s", func, lua_tostring(L, -1));
+    }
+
+    nres = -nres;  /* stack index of first result */
+	while (*sig) {  /* repeat for each result */
+		switch (*sig++) {
+			case 'd': {  /* double result */
+				int isnum;
+				double n = lua_tonumberx(L, nres, &isnum);
+				if (!isnum) {
+					error(L, "wrong result type");
+				}
+				*va_arg(vl, double *) = n;
+				break;
+			}
+			case 'i': {  /* int result */
+				int isnum;
+				int n = lua_tointegerx(L, nres, &isnum);
+				if (!isnum) {
+					error(L, "wrong result type");
+				}
+				*va_arg(vl, int *) = n;
+				break;
+			}
+			case 's': {  /* string result */
+				const char *s = lua_tostring(L, nres);
+				if (s == NULL) {
+					error(L, "wrong result type");
+				}
+				*va_arg(vl, const char **) = s;
+				break;
+			}
+			default: {
+				error(L, "invalid option (%c)", *(sig - 1));
+			}
+		}
+		nres++; 
+	}
+
+	va_end(vl);
 }

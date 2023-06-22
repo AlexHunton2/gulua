@@ -12,11 +12,14 @@ extern "C" {
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include <string.h>
 
 namespace luaAPI {
 	void loadLua(const char* fileName);
 	void stackDump(lua_State *L);
 	void error(lua_State *L, const char *fmt, ...);
+	void call_globalfunction(lua_State *L, const char *func, const char *sig, 
+		...);
 }
 
 #endif
