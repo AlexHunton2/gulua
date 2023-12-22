@@ -5,7 +5,9 @@ GuLua.
 
 ## Getting Started
 ```bash
+git clone ...
 cd gulua
+git submodule update --init --recursive
 cd build
 ```
 

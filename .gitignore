@@ -3,3 +3,5 @@
 ![Bb]uild/.gitkeep
 
 .cache/
+
+compile_commands.json
