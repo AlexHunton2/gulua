@@ -27,6 +27,8 @@ else()
     endif()
 endif()
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 include_directories(gulua/include/
                     gulua/external/assimp/include/
                     gulua/external/bullet/src/
@@ -77,7 +79,7 @@ add_library(
 )
 
 file(GLOB VENDORS_SOURCE gulua/external/glad/src/glad.c)
-file(GLOB PROJECT_HEADERS gulua/include/*.hpp)
+file(GLOB PROJECT_HEADERS gulua/include/*/*.hpp)
 file(GLOB PROJECT_SOURCE gulua/src/*/*.cpp)
 file(GLOB PROJECT_SHADERS gulua/shaders/*.comp
                           gulua/shaders/*.frag
@@ -107,5 +109,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/gulua/shaders $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/gulua/shaders $<TARGET_FILE_DIR:${PROJECT_NAME}>/shaders
     DEPENDS ${PROJECT_SHADERS})

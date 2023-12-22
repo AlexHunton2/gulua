@@ -8,13 +8,20 @@
 // Standard Headers
 #include <cstdio>
 #include <cstdlib>
+#include <memory>
+#include <vector>
 
-#include "luaAPI.hpp"
+// lua
+#include "luaapi/luaAPI.hpp"
+
+// Entity
+#include "entity/EntityRegistry.hpp"
+#include "entity/Entity.hpp"
 
 int main(int argc, char * argv[]) {
     if (argc != 2) {
-        fprintf(stderr, "Error: Sorry! Need lua file to run!\n", argc);
-        exit(1);
+        fprintf(stderr, "Error: Sorry! Need lua file to run!\n");
+        return EXIT_FAILURE;
     }
 
     const char* fileName = argv[1];
@@ -26,7 +33,7 @@ int main(int argc, char * argv[]) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-    auto mWindow = glfwCreateWindow(mWidth, mHeight, "OpenGL", nullptr, nullptr);
+    auto mWindow = glfwCreateWindow(mWidth, mHeight, "GuLua", nullptr, nullptr);
 
     // Check for Valid Context
     if (mWindow == nullptr) {
@@ -42,6 +49,9 @@ int main(int argc, char * argv[]) {
     // Lua
     luaAPI::loadLua(fileName);
 
+    // testing entities
+    std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
+    
     // Rendering Loop
     while (glfwWindowShouldClose(mWindow) == false) {
         if (glfwGetKey(mWindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -51,9 +61,27 @@ int main(int argc, char * argv[]) {
         glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        // get all entities
+        std::vector<std::shared_ptr<Entity>> entities = ent_reg->getAll();
+
+        // init
+        for (auto entity : entities) {
+            if (entity->isInitalized()) {
+                continue;
+            }
+            entity->init();
+        }
+
+        // draw
+        for (auto entity : entities) {
+            entity->draw();
+        }
+
         // Flip Buffers and Draw
         glfwSwapBuffers(mWindow);
         glfwPollEvents();
-    }   glfwTerminate();
+    }   
+
+    glfwTerminate();
     return EXIT_SUCCESS;
 }

@@ -1,0 +1,266 @@
+[
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lapi.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lapi.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lapi.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lapi.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lauxlib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lauxlib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lauxlib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lauxlib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lbaselib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lbaselib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lbaselib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lbaselib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lcode.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lcode.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lcode.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lcode.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lcorolib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lcorolib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lcorolib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lcorolib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lctype.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lctype.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lctype.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lctype.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ldblib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldblib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldblib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ldblib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ldebug.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldebug.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldebug.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ldebug.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ldo.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldo.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldo.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ldo.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ldump.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldump.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ldump.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ldump.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lfunc.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lfunc.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lfunc.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lfunc.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lgc.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lgc.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lgc.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lgc.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/linit.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/linit.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/linit.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/linit.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/liolib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/liolib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/liolib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/liolib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/llex.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/llex.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/llex.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/llex.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lmathlib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lmathlib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lmathlib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lmathlib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lmem.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lmem.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lmem.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lmem.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/loadlib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/loadlib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/loadlib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/loadlib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lobject.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lobject.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lobject.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lobject.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lopcodes.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lopcodes.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lopcodes.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lopcodes.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/loslib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/loslib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/loslib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/loslib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lparser.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lparser.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lparser.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lparser.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lstate.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstate.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstate.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lstate.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lstring.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstring.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstring.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lstring.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lstrlib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstrlib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lstrlib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lstrlib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ltable.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltable.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltable.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ltable.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ltablib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltablib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltablib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ltablib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/ltm.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltm.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/ltm.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/ltm.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lua.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lua.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lua.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lua.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lundump.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lundump.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lundump.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lundump.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lutf8lib.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lutf8lib.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lutf8lib.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lutf8lib.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lvm.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lvm.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lvm.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lvm.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/lua.dir/gulua/external/lua/lzio.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/lua/lzio.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/lua/lzio.c",
+  "output": "CMakeFiles/lua.dir/gulua/external/lua/lzio.c.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/entity/Entity.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/entity/Entity.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/entity/Entity.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/entity/Entity.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/entity/EntityRegistry.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/entity/EntityRegistry.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/entity/EntityRegistry.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/entity/EntityRegistry.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/hook/Hook.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/hook/Hook.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/hook/Hook.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/hook/Hook.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/luaapi/luaAPI.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/luaapi/luaAPI.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/luaapi/luaAPI.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/luaapi/luaAPI.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/luaapi/luaAPI_entitylib.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/luaapi/luaAPI_entitylib.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/luaapi/luaAPI_entitylib.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/luaapi/luaAPI_entitylib.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/main/main.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/main/main.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/main/main.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/main/main.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/resources/ResourceManager.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/resources/ResourceManager.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/resources/ResourceManager.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/resources/ResourceManager.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/resources/Shader.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/resources/Shader.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/resources/Shader.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/resources/Shader.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/resources/ShapeRenderer.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/resources/ShapeRenderer.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/resources/ShapeRenderer.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/resources/ShapeRenderer.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -Wall -Wextra -Wpedantic -std=c++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/src/resources/Texture.cpp.o -c /Users/alexh/Documents/Repos/gulua/gulua/src/resources/Texture.cpp",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/src/resources/Texture.cpp",
+  "output": "CMakeFiles/gulua.dir/gulua/src/resources/Texture.cpp.o"
+},
+{
+  "directory": "/Users/alexh/Documents/Repos/gulua/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\\\"/Users/alexh/Documents/Repos/gulua\\\" -I/Users/alexh/Documents/Repos/gulua/gulua/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/bullet/src -I/Users/alexh/Documents/Repos/gulua/gulua/external/glad/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glfw/include -I/Users/alexh/Documents/Repos/gulua/gulua/external/glm -I/Users/alexh/Documents/Repos/gulua/gulua/external/stb -I/Users/alexh/Documents/Repos/gulua/gulua/external/lua -I/Users/alexh/Documents/Repos/gulua/gulua/external/assimp/code/../include -I/Users/alexh/Documents/Repos/gulua/build/gulua/external/assimp/code/../include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/gulua.dir/gulua/external/glad/src/glad.c.o -c /Users/alexh/Documents/Repos/gulua/gulua/external/glad/src/glad.c",
+  "file": "/Users/alexh/Documents/Repos/gulua/gulua/external/glad/src/glad.c",
+  "output": "CMakeFiles/gulua.dir/gulua/external/glad/src/glad.c.o"
+}
+]
