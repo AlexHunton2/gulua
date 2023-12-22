@@ -3,5 +3,6 @@
 ![Bb]uild/.gitkeep
 
 .cache/
+.ccls-cache/
 
 compile_commands.json
