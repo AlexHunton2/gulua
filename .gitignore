@@ -1,1 +1,3 @@
-[Bb]uild/
+[Bb]uild/*
+
+![Bb]uild/.gitkeep

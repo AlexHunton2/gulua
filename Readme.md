@@ -27,17 +27,6 @@ cmake -G "Visual Studio 14 Win64" ..
 
 ## Documentation
 
-Functionality           | Library
------------------------ | ------------------------------------------
-Mesh Loading            | [assimp](https://github.com/assimp/assimp)
-Physics                 | [bullet](https://github.com/bulletphysics/bullet3)
-OpenGL Function Loader  | [glad](https://github.com/Dav1dde/glad)
-Windowing and Input     | [glfw](https://github.com/glfw/glfw)
-OpenGL Mathematics      | [glm](https://github.com/g-truc/glm)
-Texture Loading         | [stb](https://github.com/nothings/stb)
-
-If you started the tutorials by installing [SDL](https://www.libsdl.org/), [GLEW](https://github.com/nigels-com/glew), or [SOIL](http://www.lonesock.net/soil.html), *stop*. The libraries bundled with Glitter supersede or are functional replacements for these libraries.
-
 ## License
 >The MIT License (MIT)
 
