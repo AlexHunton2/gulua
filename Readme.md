@@ -1,14 +1,14 @@
 # [GuLua](https://github.com/AlexHunton2/gulua)
 
 ## Summary
-GuLua is a graphics library wrapped around OpenGL for the Lua Programming Language. GuLua allows for the drawing basic geometric objects and input in order to create simple graphics programs only using Lua.
+GuLua is a graphics library wrapped around OpenGL for the Lua Programming Language. GuLua allows for the drawing of basic geometric objects and input handling in order to create simple graphics programs with Lua.
 
 Inspiration of design was taken from different projects:
 * [Processing](https://processingfoundation.org) - Extremely similar idea, but with Lua.
 * [GMod](https://wiki.facepunch.com/gmod/) - Lua design of *Entities* and *Hooks*
 * [Glitter](https://github.com/Polytonic/Glitter) - Code template starting point.
 
-This project is particularly thankful to Processing and GMod as it serves as a a love letter to both of these as both were instrumental in my computer science journey.
+This project is particularly thankful to Processing and GMod as it serves as a a love letter to both as they were instrumental in my computer science journey.
 
 ## Getting Started
 
