@@ -1,4 +1,6 @@
 #include "luaapi/luaAPI_entitylib.hpp"
+#include "lua.h"
+#include "luaapi/luaAPI.hpp"
 
 int luaopen_entitylib(lua_State *L) {
 	luaL_newlib(L, luaAPI::_entitylib::entitylib);
@@ -7,8 +9,6 @@ int luaopen_entitylib(lua_State *L) {
 
 // Entity Library Functions:
 int luaAPI::_entitylib::test_func(lua_State *L) {
-	double d = luaL_checknumber(L, 1);
-	lua_pushnumber(L, sin(d));
 	return 1;
 }
 
@@ -29,6 +29,7 @@ int luaAPI::_entitylib::create_triangle(lua_State *L) {
 		vertices.push_back({x, y});
 	}
 
+
 	std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
 	std::shared_ptr<Entity> tri_ent = std::make_shared<TriangleEntity>(vertices);
     std::string tri_id = ent_reg->add(tri_ent);
@@ -36,7 +37,6 @@ int luaAPI::_entitylib::create_triangle(lua_State *L) {
     lua_pop(L, 7);
     
 	tri_ent->emit(L);
-
 	return 1;
 }
  

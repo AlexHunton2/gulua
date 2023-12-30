@@ -1,12 +1,3 @@
-/*******************************************************************
-** This code is part of Breakout.
-** https://github.com/JoeyDeVries/LearnOpenGL/
-**
-** Breakout is free software: you can redistribute it and/or modify
-** it under the terms of the CC BY 4.0 license as published by
-** Creative Commons, either version 4 of the License, or (at your
-** option) any later version.
-*/ 
 #include "resources/ShapeRenderer.hpp"
 
 using namespace GuluaResources;
@@ -22,19 +13,22 @@ ShapeRenderer::~ShapeRenderer() {
 void TriangleRenderer::drawShape() {
 	this->mShader.Use();
 
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices), &mVertices[0]);
+
 	glBindVertexArray(this->mVAO);
+
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glBindVertexArray(0);
 }
 
 void TriangleRenderer::initShape() {
-    unsigned int VBO;
     glGenVertexArrays(1, &mVAO);
-    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &mVBO);
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STREAM_DRAW);
 
     glBindVertexArray(mVAO);
     glEnableVertexAttribArray(0);
@@ -51,6 +45,8 @@ void TriangleRenderer::initShape() {
 void PolygonRenderer::drawShape() {
     this->mShader.Use();
 
+    // todo this won't work cause the buffers aren't updated tehehe :3
+
     glBindVertexArray(this->mVAO);
     glDrawElements(GL_TRIANGLES, mIndicies.size(), GL_UNSIGNED_INT, nullptr);
     glBindVertexArray(0);
@@ -62,11 +58,10 @@ void PolygonRenderer::initShape() {
     glBindVertexArray(mVAO);
 
     // Create our Vertex Buffer Object
-    unsigned int VBO;
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glGenBuffers(1, &mVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     // Fill it up with all the vertices
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STREAM_DRAW);
 
     // Inform the VAO how to properly index this VBO, ie the size of each data point
     glEnableVertexAttribArray(0);
@@ -78,7 +73,7 @@ void PolygonRenderer::initShape() {
     unsigned int IBO;
     glGenBuffers(1, &IBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies), &mIndicies[0], GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies), &mIndicies[0], GL_STREAM_DRAW);
 
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
     glBindBuffer(GL_ARRAY_BUFFER, 0); 

@@ -15,6 +15,7 @@ protected:
 	virtual void initShape() {}
 	Shader mShader; 
     unsigned int mVAO;
+    unsigned int mVBO;
 };
 
 class TriangleRenderer : public ShapeRenderer {
@@ -24,10 +25,9 @@ public:
 		this->initShape();
 	}
 	void drawShape();
+	std::vector<float> mVertices;
 protected:
 	void initShape();
-private:
-	std::vector<float> mVertices;
 };
 
 class PolygonRenderer : public ShapeRenderer {

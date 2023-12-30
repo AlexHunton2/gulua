@@ -12,11 +12,17 @@
 #include <vector>
 
 // lua
+#include "hook/HookRegistry.hpp"
 #include "luaapi/luaAPI.hpp"
 
 // Entity
 #include "entity/EntityRegistry.hpp"
 #include "entity/Entity.hpp"
+
+void keypress_callback(GLFWwindow* window, unsigned int codepoint) {
+    std::shared_ptr<HookRegistry> hook_reg = HookRegistry::getInstance();
+    hook_reg->callAll("KeyPress", "i", codepoint);
+}
 
 int main(int argc, char * argv[]) {
     if (argc != 2) {
@@ -47,11 +53,13 @@ int main(int argc, char * argv[]) {
     fprintf(stderr, "OpenGL %s\n", glGetString(GL_VERSION));
 
     // Lua
-    luaAPI::loadLua(fileName);
-
-    // testing entities
-    std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
+    lua_State *L = luaAPI::loadLua(fileName);
     
+    std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();   
+    std::shared_ptr<HookRegistry> hook_reg = HookRegistry::getInstance(L);
+
+    glfwSetCharCallback(mWindow, keypress_callback);
+ 
     // Rendering Loop
     while (glfwWindowShouldClose(mWindow) == false) {
         if (glfwGetKey(mWindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -77,11 +85,14 @@ int main(int argc, char * argv[]) {
             entity->draw();
         }
 
+        hook_reg->callAll(L, "Cycle", "");
+
         // Flip Buffers and Draw
         glfwSwapBuffers(mWindow);
         glfwPollEvents();
-    }   
+    }
 
+    luaAPI::closeLua(L);
     glfwTerminate();
     return EXIT_SUCCESS;
 }

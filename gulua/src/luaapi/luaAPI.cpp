@@ -1,6 +1,8 @@
 #include "luaapi/luaAPI.hpp"
+#include "lua.h"
+#include <cstdio>
 
-void luaAPI::loadLua(const char *fileName) {
+lua_State* luaAPI::loadLua(const char *fileName) {
 	int error;
 	lua_State *luaState = luaL_newstate();
 	luaL_openlibs(luaState);
@@ -9,15 +11,19 @@ void luaAPI::loadLua(const char *fileName) {
 	luaL_requiref(luaState, "entitylib", luaopen_entitylib, 1);
   lua_pop(luaState, 1);  /* remove lib */
 
+  luaL_requiref(luaState, "hooklib", luaopen_hooklib, 1);
+  lua_pop(luaState, 1);  /* remove lib */
+
 	// read in file
 	error = luaL_loadfile(luaState, fileName) || lua_pcall(luaState, 0, 0, 0);
-    if (error) {
-        luaAPI::error(luaState, true, "Lua Error! file: %s\n", 
-        	lua_tostring(luaState, -1));
-        lua_pop(luaState, 1);
-        exit(1);
-    }
-	lua_close(luaState);
+  if (error) {
+  	luaAPI::error(luaState, lua_tostring(luaState, -1));
+  }
+  return luaState;
+}
+
+void luaAPI::closeLua(lua_State *L) {
+	lua_close(L);
 }
 
 
@@ -49,14 +55,15 @@ void luaAPI::stackDump(lua_State *L) {
 	printf("\n");  /* end the listing */
 }
 
-void luaAPI::error(lua_State *L, bool killFlag, const char *fmt, ...) {
+void luaAPI::error(lua_State *L, const char *fmt, ...) {
 	va_list argp;
-    va_start(argp, fmt);
-    vfprintf(stderr, fmt, argp);
-    va_end(argp);
-    lua_close(L);
-    if (killFlag)
-    	exit(1);
+	va_start(argp, fmt);
+	fprintf(stderr, "Lua Error! ");
+	vfprintf(stderr, fmt, argp);
+	fprintf(stderr, "\n");
+	va_end(argp);
+	lua_pop(L, 1);
+	exit(1);
 }
 
 /*
@@ -97,7 +104,7 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
             case '>':  /* end of arguments */
               goto endargs;  /* break the loop */
             default:
-              error(L, false, "invalid option (%c)", *(sig - 1));
+              error(L, "invalid option (%c)", *(sig - 1));
           }
 	}
 	endargs:
@@ -106,7 +113,7 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
 
 	// do call
 	if (lua_pcall(L, narg, nres, 0) != 0) {
-		error(L, false, "error calling '%s': %s", func, lua_tostring(L, -1));
+		error(L, "error calling '%s': %s", func, lua_tostring(L, -1));
     }
 
     nres = -nres;  /* stack index of first result */
@@ -116,7 +123,7 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
 				int isnum;
 				double n = lua_tonumberx(L, nres, &isnum);
 				if (!isnum) {
-					error(L, false, "wrong result type");
+					error(L, "wrong result type");
 				}
 				*va_arg(vl, double *) = n;
 				break;
@@ -125,7 +132,7 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
 				int isnum;
 				int n = lua_tointegerx(L, nres, &isnum);
 				if (!isnum) {
-					error(L, false, "wrong result type");
+					error(L, "wrong result type");
 				}
 				*va_arg(vl, int *) = n;
 				break;
@@ -133,13 +140,13 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
 			case 's': {  /* string result */
 				const char *s = lua_tostring(L, nres);
 				if (s == NULL) {
-					error(L, false, "wrong result type");
+					error(L, "wrong result type");
 				}
 				*va_arg(vl, const char **) = s;
 				break;
 			}
 			default: {
-				error(L, false, "invalid option (%c)", *(sig - 1));
+				error(L, "invalid option (%c)", *(sig - 1));
 			}
 		}
 		nres++; 

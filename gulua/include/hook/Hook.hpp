@@ -11,12 +11,14 @@ extern "C" {
 
 class Hook {
 public:
-	virtual void call(lua_State *L) {};
+	void call(lua_State *L, const char *sig, ...);
+	void call(lua_State *L, const char *sig, va_list args);
+	Hook(std::string ident, std::string sig, int key) 
+		: mCallSignature(sig), mIdentifier(ident), mLuaRegistryKey(key) {};
+	std::string mCallSignature; 
 protected:
-	Hook();
-	~Hook();
 	std::string mIdentifier;
-	std::string mFunctionName;
+	int mLuaRegistryKey;
 };
 
 
