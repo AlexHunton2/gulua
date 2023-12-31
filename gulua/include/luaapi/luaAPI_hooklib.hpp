@@ -11,7 +11,6 @@ extern "C" {
 #include <stdio.h>
 #include <math.h>
 #include <vector>
-#include <format>
 #include <memory>
 
 #include "lua.h"

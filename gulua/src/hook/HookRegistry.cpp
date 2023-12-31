@@ -29,6 +29,10 @@ void HookRegistry::callAll(lua_State *L, std::string callSig, const char *sig, .
 }
 
 void HookRegistry::callAll(std::string callSig, const char* sig, ...) noexcept {
+	if (mLuaState == nullptr) {
+		return;
+	}	
+
 	va_list vl;
 	va_start(vl, sig);
 	callAll(mLuaState, callSig, sig, vl);
