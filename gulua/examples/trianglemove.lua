@@ -1,16 +1,3 @@
-function dump(o)
-   if type(o) == 'table' then
-      local s = '{ '
-      for k,v in pairs(o) do
-         if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. dump(v) .. ','
-      end
-      return s .. '} '
-   else
-      return tostring(o)
-   end
-end
-
 local triangle1 = entitylib.create_triangle({200, 200, 300, 300, 200, 300})
 
 function h(key)
@@ -18,6 +5,7 @@ function h(key)
 
    -- up
    local vertices = triangle1:get_vertices()
+
    if (string.char(key) == 'w') then
       for i=1,3 do
          vertices[i*2] = vertices[i*2] - speed
