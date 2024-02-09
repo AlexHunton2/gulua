@@ -92,6 +92,10 @@ int main(int argc, char * argv[]) {
         glfwPollEvents();
     }
 
+
+    (*ent_reg).~EntityRegistry();
+    printf("Hewoo :) \n");
+
     luaAPI::closeLua(L);
     glfwTerminate();
     return EXIT_SUCCESS;

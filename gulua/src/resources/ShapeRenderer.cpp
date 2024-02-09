@@ -7,7 +7,10 @@ ShapeRenderer::ShapeRenderer(Shader &shader) {
 }
 
 ShapeRenderer::~ShapeRenderer() {
-	glDeleteVertexArrays(1, &this->mVAO);
+    printf("Error: %d \n", glGetError());
+
+	glDeleteVertexArrays(1, &mVAO);
+    glDeleteBuffers(GL_ARRAY_BUFFER, &mVBO);
 }
 
 void TriangleRenderer::drawShape() {
@@ -19,7 +22,9 @@ void TriangleRenderer::drawShape() {
 	glBindVertexArray(this->mVAO);
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
+
     glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 void TriangleRenderer::initShape() {
@@ -28,7 +33,7 @@ void TriangleRenderer::initShape() {
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STREAM_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices[0]), mVertices.data(), GL_STREAM_DRAW);
 
     glBindVertexArray(mVAO);
     glEnableVertexAttribArray(0);
@@ -82,5 +87,3 @@ void PolygonRenderer::initShape() {
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0); 
 }
-
-
