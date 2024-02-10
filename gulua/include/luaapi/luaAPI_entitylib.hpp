@@ -22,9 +22,11 @@ namespace _entitylib {
 	int test_func(lua_State *L);
 	// Args: table: {ax, ay, bx, by, cx, cy}
 	int create_triangle(lua_State *L);
+	int delete_triangle(lua_State *L);
 	const struct luaL_Reg entitylib [] = {
         {"test_func", test_func},
         {"create_triangle", create_triangle},
+        {"delete_triangle", delete_triangle},
         {NULL, NULL}  /* sentinel */
 	};
 }

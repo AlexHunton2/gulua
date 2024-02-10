@@ -7,33 +7,44 @@ ShapeRenderer::ShapeRenderer(Shader &shader) {
 }
 
 ShapeRenderer::~ShapeRenderer() {
-    printf("Error: %d \n", glGetError());
-
 	glDeleteVertexArrays(1, &mVAO);
     glDeleteBuffers(GL_ARRAY_BUFFER, &mVBO);
+
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        throw std::runtime_error(
+            std::string("TriangleRenderer Deletion Failure | GLError: %d", 
+            err));
+    }
 }
 
 void TriangleRenderer::drawShape() {
 	this->mShader.Use();
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices), &mVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), &mVertices[0]);
 
 	glBindVertexArray(this->mVAO);
-
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        throw std::runtime_error(
+            std::string("TriangleRenderer Draw Shape Failure | GLError: %d", 
+            err));
+    }
 }
 
 void TriangleRenderer::initShape() {
     glGenVertexArrays(1, &mVAO);
     glGenBuffers(1, &mVBO);
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices[0]), mVertices.data(), GL_STREAM_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices[0]), 
+        mVertices.data(), GL_STREAM_DRAW);
 
     glBindVertexArray(mVAO);
     glEnableVertexAttribArray(0);
@@ -45,6 +56,13 @@ void TriangleRenderer::initShape() {
     // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0); 
+
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        throw std::runtime_error(
+            std::string("TriangleRenderer Init Shape Failure | GLError: %d", 
+            err));
+    }
 }
 
 void PolygonRenderer::drawShape() {
@@ -66,7 +84,8 @@ void PolygonRenderer::initShape() {
     glGenBuffers(1, &mVBO);
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     // Fill it up with all the vertices
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), &mVertices[0], GL_STREAM_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), 
+        &mVertices[0], GL_STREAM_DRAW);
 
     // Inform the VAO how to properly index this VBO, ie the size of each data point
     glEnableVertexAttribArray(0);
@@ -78,7 +97,8 @@ void PolygonRenderer::initShape() {
     unsigned int IBO;
     glGenBuffers(1, &IBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies), &mIndicies[0], GL_STREAM_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies),
+     &mIndicies[0], GL_STREAM_DRAW);
 
     // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
     glBindBuffer(GL_ARRAY_BUFFER, 0); 

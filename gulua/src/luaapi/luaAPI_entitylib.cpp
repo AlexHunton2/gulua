@@ -39,4 +39,16 @@ int luaAPI::_entitylib::create_triangle(lua_State *L) {
 	tri_ent->emit(L);
 	return 1;
 }
+
+int luaAPI::_entitylib::delete_triangle(lua_State *L) {
+	luaL_checktype(L, 1, LUA_TTABLE); // ensure first param is table
+
+	lua_getfield(L, -1, "ent_id");
+
+	const char *id = luaL_checkstring(L, 2);
+	std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
+	ent_reg->remove(std::string(id));
+
+	return 1;
+}
  
