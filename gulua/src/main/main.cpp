@@ -92,6 +92,9 @@ int main(int argc, char * argv[]) {
         glfwPollEvents();
     }
 
+    ent_reg->clear();
+    // TODO: Clear hooks
+
     luaAPI::closeLua(L);
     glfwTerminate();
     return EXIT_SUCCESS;

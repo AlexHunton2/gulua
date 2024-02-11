@@ -1,4 +1,5 @@
 #include "entity/EntityRegistry.hpp"
+#include "entity/Entity.hpp"
 
 EntityRegistry::EntityRegistry() {}
 
@@ -60,5 +61,7 @@ std::vector<std::shared_ptr<Entity>> EntityRegistry::getAll() noexcept {
 	return ret;
 }
 
-
+void EntityRegistry::clear() noexcept {
+	mEntities.clear();
+}
 

@@ -3,6 +3,7 @@
 
 #include "resources/Shader.hpp"
 #include <vector>
+#include <stdexcept>
 
 namespace GuluaResources {
 

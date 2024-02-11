@@ -9,13 +9,6 @@ ShapeRenderer::ShapeRenderer(Shader &shader) {
 ShapeRenderer::~ShapeRenderer() {
 	glDeleteVertexArrays(1, &mVAO);
     glDeleteBuffers(GL_ARRAY_BUFFER, &mVBO);
-
-    GLenum err = glGetError();
-    if (err != GL_NO_ERROR) {
-        throw std::runtime_error(
-            std::string("TriangleRenderer Deletion Failure | GLError: %d", 
-            err));
-    }
 }
 
 void TriangleRenderer::drawShape() {

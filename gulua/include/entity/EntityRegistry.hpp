@@ -28,6 +28,7 @@ public:
 	int remove(std::string key) noexcept; // 0 means none removed, 1 means success
 	std::shared_ptr<Entity> get(std::string key) noexcept;
 	std::vector<std::shared_ptr<Entity>> getAll() noexcept;
+	void clear() noexcept;
 };
 
 #endif
