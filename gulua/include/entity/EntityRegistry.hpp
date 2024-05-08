@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <stdio.h>
-#include <time.h>
 #include <unordered_set>
 #include <typeinfo>
 
@@ -19,9 +17,6 @@ private:
 
 	std::map<std::string, std::shared_ptr<Entity>> mEntities;
 	std::unordered_set<int> mIds;
-
-	int generateId();
-
 public:
 	static std::shared_ptr<EntityRegistry> getInstance() noexcept;
 	std::string add(std::shared_ptr<Entity> ent) noexcept;
