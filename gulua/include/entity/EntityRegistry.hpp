@@ -1,5 +1,6 @@
 #ifndef ENTITY_REG
 #define ENTITY_REG
+#pragma once
 
 #include <memory>
 #include <string>
@@ -8,7 +9,8 @@
 #include <unordered_set>
 #include <typeinfo>
 
-#include "Entity.hpp"
+#include "entity/Entity.hpp"
+#include "util/util.hpp"
 
 // singleton
 class EntityRegistry {

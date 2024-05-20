@@ -11,22 +11,19 @@ extern "C" {
 #include <stdio.h>
 #include <math.h>
 #include <vector>
+#include <iostream>
 
 #include "lua.h"
 #include "luaapi/luaAPI.hpp"
-
 #include "entity/EntityRegistry.hpp"
 
 namespace luaAPI {
 namespace _entitylib {
-	int test_func(lua_State *L);
-	// Args: table: {ax, ay, bx, by, cx, cy}
-	int create_triangle(lua_State *L);
-	int delete_triangle(lua_State *L);
+	int _create(lua_State *L);
+	int _delete(lua_State *L);
 	const struct luaL_Reg entitylib [] = {
-        {"test_func", test_func},
-        {"create_triangle", create_triangle},
-        {"delete_triangle", delete_triangle},
+        {"create", _create},
+        {"delete", _delete},
         {NULL, NULL}  /* sentinel */
 	};
 }

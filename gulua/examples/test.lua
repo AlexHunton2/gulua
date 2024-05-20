@@ -1,10 +1,5 @@
-local triangle1 = entitylib.create_triangle({200, 200, 300, 300, 200, 300})
-
-function h(key)
-   -- up
-   if (string.char(key) == 'w') then
-      entitylib.delete_triangle(triangle1)
-   end
-end
-
-hooklib.register_hook("movement", "KeyPress", h)
+local point1 = point.new(100, 100)
+point1.x = 200
+print(point1.x)
+print(tabledump(getmetatable(point)))
+print(point(300, 400).x)

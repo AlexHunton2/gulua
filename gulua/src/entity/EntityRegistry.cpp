@@ -1,6 +1,4 @@
 #include "entity/EntityRegistry.hpp"
-#include "entity/Entity.hpp"
-#include "util/util.hpp"
 
 EntityRegistry::EntityRegistry() {}
 

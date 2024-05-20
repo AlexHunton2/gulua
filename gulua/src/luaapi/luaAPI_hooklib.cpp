@@ -5,7 +5,7 @@ int luaopen_hooklib(lua_State *L) {
 	return 1;
 }
 
-int luaAPI::_hooklib::register_hook(lua_State *L) {
+lua_lib_func luaAPI::_hooklib::register_hook(lua_State *L) {
 	int arg_size = lua_gettop(L);
 	if (arg_size < 3) {
 		luaAPI::error(L, "Incorrect Hook Register: wrong argument size.");

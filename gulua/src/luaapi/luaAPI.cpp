@@ -1,6 +1,4 @@
 #include "luaapi/luaAPI.hpp"
-#include "lua.h"
-#include <cstdio>
 
 lua_State* luaAPI::loadLua(const char *fileName) {
 	int error;
@@ -13,6 +11,32 @@ lua_State* luaAPI::loadLua(const char *fileName) {
 
   luaL_requiref(luaState, "hooklib", luaopen_hooklib, 1);
   lua_pop(luaState, 1);  /* remove lib */
+
+  // Expose Attribute's API
+  if (init_attr_type_map() != GULUA_OK) {
+   	fprintf(stderr, "Failed to Create Attribute Type Map");
+  }
+  for (auto const&atrr_pair : attr_type_map) {
+  	std::string id = atrr_pair.first;
+  	util_lowercase(&id);
+  	luaL_requiref(luaState, id.c_str(), atrr_pair.second->luaopen_entlib, 1);
+  }
+
+  // Expose Entity's API
+  if (init_ent_type_map() != GULUA_OK) {
+   	fprintf(stderr, "Failed to Create Entity Type Map");
+  }
+  for (auto const&ent_pair : ent_type_map) {
+  	std::string id = ent_pair.first;
+  	util_lowercase(&id);
+  	luaL_requiref(luaState, id.c_str(), ent_pair.second->luaopen_entlib, 1);
+  }
+
+  // Run the autorun file for gulua's lua library
+  error = luaL_loadfile(luaState, "../../gulua/lualib/autorun.lua") || lua_pcall(luaState, 0, 0, 0);
+  if (error) {
+  	luaAPI::error(luaState, lua_tostring(luaState, -1));
+  }
 
 	// read in file
 	error = luaL_loadfile(luaState, fileName) || lua_pcall(luaState, 0, 0, 0);
@@ -153,22 +177,4 @@ void luaAPI::callGlobalFunction(lua_State *L, const char *func,
 	}
 
 	va_end(vl);
-}
-
-std::string luaAPI::retrieveEntIDFromTable(lua_State *L) {
-	luaL_checktype(L, 1, LUA_TTABLE);
-	
-	std::string ent_id;
-	// reading table for the ent_id
-  lua_pushnil(L);
-	while (lua_next(L, 1) != 0) {
-		if (lua_type(L, -2) == LUA_TSTRING) { // if key is string
-			std::string key = std::string(lua_tostring(L, -2));
-			if (key == "ent_id") {
-				ent_id = std::string(lua_tostring(L, -1));
-			}
-		}
-		lua_pop(L, 1);
-	}
-	return ent_id;
 }

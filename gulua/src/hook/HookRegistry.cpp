@@ -48,3 +48,7 @@ void HookRegistry::callAll(lua_State *L, std::string callSig, const char *sig, v
 void HookRegistry::register_lua_state(lua_State *L) noexcept {
 	mLuaState = L;
 }
+
+void HookRegistry::clear() noexcept {
+	mHooks.clear();
+}

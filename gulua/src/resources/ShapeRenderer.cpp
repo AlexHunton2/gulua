@@ -33,21 +33,17 @@ void TriangleRenderer::drawShape() {
 
 void TriangleRenderer::initShape() {
     glGenVertexArrays(1, &mVAO);
+    glBindVertexArray(mVAO);
+
     glGenBuffers(1, &mVBO);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices[0]), 
         mVertices.data(), GL_STREAM_DRAW);
 
-    glBindVertexArray(mVAO);
-    glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
     glBindBuffer(GL_ARRAY_BUFFER, 0); 
-
-    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
-    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     glBindVertexArray(0); 
 
     GLenum err = glGetError();
@@ -61,11 +57,27 @@ void TriangleRenderer::initShape() {
 void PolygonRenderer::drawShape() {
     this->mShader.Use();
 
-    // todo this won't work cause the buffers aren't updated tehehe :3
+    glBindBuffer(GL_ARRAY_BUFFER, mVBO);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), 
+        &mVertices[0]);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBufferId);
+    glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, 
+        mIndicies.size() * sizeof(mIndicies[0]), &mIndicies[0]);
 
     glBindVertexArray(this->mVAO);
-    glDrawElements(GL_TRIANGLES, mIndicies.size(), GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, mIndicies.size(), GL_UNSIGNED_INT, NULL);
+
     glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        throw std::runtime_error(
+            std::string("PolygonRenderer Draw Shape Failure | GLError: %d", 
+            err));
+    }
 }
 
 void PolygonRenderer::initShape() {
@@ -73,30 +85,28 @@ void PolygonRenderer::initShape() {
     glGenVertexArrays(1, &mVAO);
     glBindVertexArray(mVAO);
 
-    // Create our Vertex Buffer Object
     glGenBuffers(1, &mVBO);
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
-    // Fill it up with all the vertices
-    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices), 
-        &mVertices[0], GL_STREAM_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, mVertices.size() * sizeof(mVertices[0]), 
+        mVertices.data(), GL_STREAM_DRAW);
+
+    glGenBuffers(1, &mIndexBufferId);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBufferId);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies[0]), 
+        mIndicies.data(), GL_STREAM_DRAW);
 
     // Inform the VAO how to properly index this VBO, ie the size of each data point
-    glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
 
-    // Create our Index Buffer Object, 
-    //(the indicies of the triangles that make up a shape)
-    // imagine rectangle with veticies 0, 1, 2, 3. Two triangles make up rectangle of 0,1,2 and 2,3,1
-    unsigned int IBO;
-    glGenBuffers(1, &IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, mIndicies.size() * sizeof(mIndicies),
-     &mIndicies[0], GL_STREAM_DRAW);
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
-    glBindBuffer(GL_ARRAY_BUFFER, 0); 
-
-    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
-    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
-    glBindVertexArray(0); 
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        throw std::runtime_error(
+            std::string("PolygonRenderer Init Shape Failure | GLError: %d", 
+            err));
+    }
 }

@@ -80,7 +80,7 @@ add_library(
 
 file(GLOB VENDORS_SOURCE gulua/external/glad/src/glad.c)
 file(GLOB PROJECT_HEADERS gulua/include/*/*.hpp)
-file(GLOB PROJECT_SOURCE gulua/src/*/*.cpp)
+file(GLOB_RECURSE PROJECT_SOURCE gulua/src/*.cpp)
 file(GLOB PROJECT_SHADERS gulua/shaders/*.comp
                           gulua/shaders/*.frag
                           gulua/shaders/*.geom

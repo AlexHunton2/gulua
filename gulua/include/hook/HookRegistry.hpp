@@ -24,6 +24,7 @@ public:
 	void callAll(lua_State *L, std::string callSig, const char* sig, ...) noexcept;
 	void callAll(std::string callSig, const char* sig, ...) noexcept;
 	void register_lua_state(lua_State *L) noexcept;
+	void clear() noexcept;
 };
 
 #endif

@@ -1,5 +1,6 @@
 #ifndef LUA_API_
 #define LUA_API_
+#pragma once
 
 // Lua Headers
 #include <string>
@@ -14,22 +15,14 @@ extern "C" {
 #include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
+#include <locale>
 
-#include "luaapi/luaAPI_entitylib.hpp"
 #include "luaapi/luaAPI_hooklib.hpp"
-
-
-#define LUA_TABLE_APPEND_STR_STR(L, KEY, VALUE, FUNCTION_IDX) { \
-    lua_pushstring(L, KEY); \
-	lua_pushstring(L, VALUE); \
-	lua_settable(L, FUNCTION_IDX); \
-}
-
-#define LUA_TABLE_APPEND_STR_FUNC(L, KEY, VALUE, FUNCTION_IDX) { \
-    lua_pushstring(L, KEY); \
-	lua_pushcfunction(L, VALUE); \
-	lua_settable(L, FUNCTION_IDX); \
-}
+#include "luaapi/luaAPI_entitylib.hpp"
+#include "entity/LuaEntity.hpp"
+#include "attribute/LuaAttribute.hpp"
+#include "util/util.hpp"
+#include "luaapi/luaDefs.hpp"
 
 namespace luaAPI {
 	lua_State* loadLua(const char* fileName);
@@ -38,7 +31,6 @@ namespace luaAPI {
 	void error(lua_State *L, const char *fmt, ...);
 	void callGlobalFunction(lua_State *L, const char *func, const char *sig, 
 		...);
-	std::string retrieveEntIDFromTable(lua_State *L); // Assumes Entity Table is at top of stack
 }
 
 #endif

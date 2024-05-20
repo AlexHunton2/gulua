@@ -1,6 +1,4 @@
 #include "luaapi/luaAPI_entitylib.hpp"
-#include "lua.h"
-#include "luaapi/luaAPI.hpp"
 
 int luaopen_entitylib(lua_State *L) {
 	luaL_newlib(L, luaAPI::_entitylib::entitylib);
@@ -8,47 +6,31 @@ int luaopen_entitylib(lua_State *L) {
 }
 
 // Entity Library Functions:
-int luaAPI::_entitylib::test_func(lua_State *L) {
+lua_lib_func luaAPI::_entitylib::_create(lua_State *L) {
+	std::string ent_name = std::string(luaL_checkstring(L, 1));
+	std::shared_ptr<EntityType> ent_type = ent_type_map[ent_name];
+	if (ent_type != NULL) {
+		lua_pop(L, 1);
+		return ent_type->create_func(L);
+	}
+
+	lua_pop(L, 1);
+	lua_pushnil(L);
 	return 1;
 }
 
-int luaAPI::_entitylib::create_triangle(lua_State *L) {
-	luaL_checktype(L, 1, LUA_TTABLE); // ensure first param is table
+lua_lib_func luaAPI::_entitylib::_delete(lua_State *L) {
+	LuaEntity* ent = (LuaEntity *)lua_touserdata(L, 1);
+	luaL_argcheck(L, ent != NULL, 1, "`Entity' expected");
+	std::string id = std::string(ent->id);
 
-	// push all vertices in table to stack
-	for (int i=1; i < 7; i++) {
-		lua_rawgeti(L, 1, i);
-	}
+	/*
+	Note: currently don't need a individual delete function but you have
+	LuaEntity.type to do this so, go ahead if you need it idk.
+	*/
 
-	// retrieve all vertices
-	// skip table index, (1 = table, 2 = first vertex, .. 7 = last vertex)
-	std::vector<std::pair<int, int>> vertices;
-	for (int i=2; i < 8; i+= 2) {
-		int x = luaL_checknumber(L, i);
-		int y = luaL_checknumber(L, i+1);
-		vertices.push_back({x, y});
-	}
-
-
-	std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
-	std::shared_ptr<Entity> tri_ent = std::make_shared<TriangleEntity>(vertices);
-    std::string tri_id = ent_reg->add(tri_ent);
-
-    lua_pop(L, 7);
-    
-	tri_ent->emit(L);
-	return 1;
-}
-
-int luaAPI::_entitylib::delete_triangle(lua_State *L) {
-	luaL_checktype(L, 1, LUA_TTABLE); // ensure first param is table
-
-	lua_getfield(L, -1, "ent_id");
-
-	const char *id = luaL_checkstring(L, 2);
 	std::shared_ptr<EntityRegistry> ent_reg = EntityRegistry::getInstance();
 	ent_reg->remove(std::string(id));
-
 	return 1;
 }
  

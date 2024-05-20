@@ -43,6 +43,7 @@ protected:
 private:
 	std::vector<float> mVertices;
 	std::vector<unsigned int> mIndicies;
+	unsigned int mIndexBufferId;
 };
 
 

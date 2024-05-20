@@ -93,7 +93,7 @@ int main(int argc, char * argv[]) {
     }
 
     ent_reg->clear();
-    // TODO: Clear hooks
+    hook_reg->clear();
 
     luaAPI::closeLua(L);
     glfwTerminate();

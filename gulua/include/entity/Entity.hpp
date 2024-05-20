@@ -1,5 +1,11 @@
+/*
+	Entity.hpp
+
+	Core of entities, intefaces with OpenGL, interfaced with Lua
+*/
 #ifndef ENTITY
 #define ENTITY
+#pragma once
 
 extern "C" {
 #include <lua.h>
@@ -18,7 +24,6 @@ class Entity {
 public:
 	virtual void init() {} // called once
 	virtual void draw() {} // called every frame
-	virtual void emit(lua_State *L) {} // pushes a table representing the object to lua stack 
 	bool isInitalized() { return mInitalized; }
 	void setID(std::string id) { this->id = id; }
 	std::string getID() { return this->id; }	
@@ -34,7 +39,6 @@ public:
 	TriangleEntity(std::vector<std::pair<int, int>> vertices) : Entity(), mVertices(vertices), mRenderer(nullptr) {}
 	void init();
 	void draw();
-	void emit(lua_State *L);
 	std::vector<std::pair<int, int>> mVertices;
 private:
 	std::shared_ptr<GuluaResources::TriangleRenderer> mRenderer;

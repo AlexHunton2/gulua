@@ -1,7 +1,7 @@
-#include "util/util.hpp";
+#include "util/util.hpp"
 
 int util_generateid() {
-	const int ID_SIZE = 5;;
+	const int ID_SIZE = 5;
 	srand(time(0));
 
 	int id;
