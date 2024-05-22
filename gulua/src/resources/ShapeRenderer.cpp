@@ -1,5 +1,8 @@
 #include "resources/ShapeRenderer.hpp"
 
+#define DIV_255F(x) ((float)(x / 255.0f))
+#define DIV_100F(x) ((float)(x / 100.0f))
+
 using namespace GuluaResources;
 
 ShapeRenderer::ShapeRenderer(Shader &shader) {
@@ -13,6 +16,7 @@ ShapeRenderer::~ShapeRenderer() {
 
 void TriangleRenderer::drawShape() {
 	this->mShader.Use();
+    mShader.SetVector4f("color", DIV_255F(mColor.r), DIV_255F(mColor.g), DIV_255F(mColor.b), DIV_100F(mColor.a));
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), &mVertices[0]);

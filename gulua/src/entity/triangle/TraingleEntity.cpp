@@ -5,7 +5,8 @@ void TriangleEntity::init() {
 		return;
 	}
 
-	if (mVertices.size() != 3) {
+	std::vector<Attr::Point> _vertices = (*getVertices()->attrs);
+	if (_vertices.size() != 3) {
 		throw std::runtime_error("Invalid TriangleEntity Vertices");
 	}
 
@@ -16,24 +17,24 @@ void TriangleEntity::init() {
 	}
 
 
-	std::vector<float> vertices;
-	for (auto pair : mVertices) {
-		float x = (2.0f*(float)pair.first / mWidth)-1.0f;
-		float y = 1.0f-(2.0f*(float)pair.second / mHeight);
-		vertices.push_back(x);
-		vertices.push_back(y);
-		vertices.push_back(0.0f);
+	std::vector<float> gl_vertices;
+	for (auto pair : _vertices) {
+		float x = (2.0f*(float)pair.x / mWidth)-1.0f;
+		float y = 1.0f-(2.0f*(float)pair.y / mHeight);
+		gl_vertices.push_back(x);
+		gl_vertices.push_back(y);
+		gl_vertices.push_back(0.0f);
 	}
 
-	mRenderer = std::make_shared<GuluaResources::TriangleRenderer>(shader,vertices);
+	mRenderer = std::make_shared<GuluaResources::TriangleRenderer>(shader,gl_vertices, *this->getColor());
 	mInitalized = true;
 }
 
 void TriangleEntity::draw() {
 	std::vector<float> vertices;
-	for (auto pair : mVertices) {
-		float x = (2.0f*(float)pair.first / mWidth)-1.0f;
-		float y = 1.0f-(2.0f*(float)pair.second / mHeight);
+	for (auto pair : *getVertices()->attrs) {
+		float x = (2.0f*(float)pair.x / mWidth)-1.0f;
+		float y = 1.0f-(2.0f*(float)pair.y / mHeight);
 		vertices.push_back(x);
 		vertices.push_back(y);
 		vertices.push_back(0.0f);
@@ -41,4 +42,39 @@ void TriangleEntity::draw() {
 
 	mRenderer->mVertices = vertices;
 	mRenderer->drawShape();
+}
+
+std::shared_ptr<Attr::PointVec> TriangleEntity::getVertices() {
+	auto attr_ptr = std::static_pointer_cast<Attr::PointVec>(mAttrMap["vertices"]);
+	if (attr_ptr == nullptr) {
+		// default
+		std::shared_ptr<std::vector<Attr::Point>> vertices = std::make_shared<std::vector<Attr::Point>>();
+		for (int i=0; i < 3; i++) {
+			Attr::Point pt;
+			vertices->push_back(pt);
+		}
+		setVertices(vertices);
+		return getVertices();
+	}
+	return attr_ptr;
+}
+
+void TriangleEntity::setVertices(std::shared_ptr<std::vector<Attr::Point>> vertices) {
+	std::shared_ptr<Attr::PointVec> pt_vec = std::make_shared<Attr::PointVec>();
+	pt_vec->attrs = vertices;
+	mAttrMap["vertices"] = pt_vec;
+}
+
+std::shared_ptr<Attr::Color> TriangleEntity::getColor() {
+	auto attr_ptr = std::static_pointer_cast<Attr::Color>(mAttrMap["color"]);
+	if (attr_ptr == nullptr) {
+		std::shared_ptr<Attr::Color> color = std::make_shared<Attr::Color>();
+		setColor(color);
+		return color;
+	}
+	return attr_ptr;
+}
+
+void TriangleEntity::setColor(std::shared_ptr<Attr::Color> color) {
+	mAttrMap["color"] = color;
 }

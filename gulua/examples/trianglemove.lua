@@ -1,5 +1,6 @@
 local triangle1 = entitylib.create("Triangle")
 triangle1:set_vertices(point(200, 200), point(300, 300), point(200, 300))
+triangle1:set_color(color(255, 218, 76, 80))
 
 function h(key)
    local speed = 10

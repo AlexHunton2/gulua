@@ -20,6 +20,8 @@ extern "C" {
 #include "gulua.hpp"
 #include <memory>
 
+#include "attribute/Attribute.hpp"
+
 class Entity {
 public:
 	virtual void init() {} // called once
@@ -32,14 +34,18 @@ protected:
 	Entity();
 	bool mInitalized = false;
 	std::string id;
+	std::map<std::string, std::shared_ptr<Attr::Attribute>> mAttrMap;
 };
 
 class TriangleEntity : public Entity {
 public:
-	TriangleEntity(std::vector<std::pair<int, int>> vertices) : Entity(), mVertices(vertices), mRenderer(nullptr) {}
+	TriangleEntity() : Entity(), mRenderer(nullptr) {}
 	void init();
 	void draw();
-	std::vector<std::pair<int, int>> mVertices;
+	std::shared_ptr<Attr::PointVec> getVertices();
+	void setVertices(std::shared_ptr<std::vector<Attr::Point>> vertices);
+	std::shared_ptr<Attr::Color> getColor();
+	void setColor(std::shared_ptr<Attr::Color> color);
 private:
 	std::shared_ptr<GuluaResources::TriangleRenderer> mRenderer;
 };

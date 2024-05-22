@@ -37,12 +37,16 @@ namespace _triangle {
 
 	lua_method get_vertices(lua_State *L);
 	lua_method set_vertices(lua_State *L);
+	lua_method get_color(lua_State *L);
+	lua_method set_color(lua_State *L);
 	static const struct luaL_Reg trianglelib_f [] = {
       {NULL, NULL}
     };
 	static const struct luaL_Reg trianglelib_m [] = {
       {"get_vertices", get_vertices},
       {"set_vertices", set_vertices},
+      {"get_color", get_color},
+      {"set_color", set_color},
       {NULL, NULL}
     };
 }

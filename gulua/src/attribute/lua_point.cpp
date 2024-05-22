@@ -9,8 +9,16 @@ Attr::Point *check_point(lua_State *L) {
 
 Attr::Point *check_point(lua_State *L, int n) {
 	void *ud = luaL_checkudata(L, n, LUA_PT_META_NAME);
-	luaL_argcheck(L, ud != NULL, 1, "`Point' expected");
+	luaL_argcheck(L, ud != NULL, 1, "`point' expected");
 	return (Attr::Point *)ud;
+}
+
+// helper function
+static void set_x_y(lua_State *L, Attr::Point *pt_ptr, int x, int y) {
+	luaL_argcheck(L, x >= 0 && x <= mWidth, 1, "invalid x size");
+	luaL_argcheck(L, y >= 0 && y <= mHeight, 1, "invalid y size");
+	pt_ptr->x = x;
+	pt_ptr->y = y;
 }
 
 Attr::Point *push_point(lua_State *L, int x, int y) {
@@ -23,11 +31,10 @@ Attr::Point *push_point(lua_State *L, int x, int y) {
 	return pt_ptr;
 }
 
-static void set_x_y(lua_State *L, Attr::Point *pt_ptr, int x, int y) {
-	luaL_argcheck(L, x >= 0 && x <= mWidth, 1, "invalid x size");
-	luaL_argcheck(L, y >= 0 && y <= mHeight, 1, "invalid y size");
-	pt_ptr->x = x;
-	pt_ptr->y = y;
+std::string to_string(Attr::Attribute *attr) {
+	Attr::Point *pt_ptr = static_cast<Attr::Point *>(attr);
+	// (x, y)
+	return "(" + std::to_string(pt_ptr->x) + ", " + std::to_string(pt_ptr->y) + ")"; 
 }
 
 // _new(x, y)
@@ -109,6 +116,14 @@ lua_method _call(lua_State *L) {
 	return _new(L);
 }
 
+lua_method _tostring(lua_State *L) {
+	Attr::Point* pt_ptr;
+
+	pt_ptr = check_point(L);
+	std::string pt_str = to_string(pt_ptr);
+	lua_pushfstring(L, pt_str.c_str(), pt_str.length());
+}
+
 }
 }
 
@@ -122,4 +137,6 @@ int luaopen_pointlib(lua_State *L) {
 	luaL_newmetatable(L, LUA_PT_META_LIB_NAME); /* create metatable for THE library */
 	luaL_setfuncs(L, luaAttrs::point::pointlib_lm, 0);  /* register library metamethods */
 	lua_setmetatable(L, -2); /* set metatable for library */
+
+	return 1;
 }

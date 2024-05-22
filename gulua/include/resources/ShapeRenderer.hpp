@@ -1,6 +1,7 @@
 #ifndef SHAPE_RENDERER_H
 #define SHAPE_RENDERER_H
 
+#include "attribute/Attribute.hpp"
 #include "resources/Shader.hpp"
 #include <vector>
 #include <stdexcept>
@@ -21,12 +22,13 @@ protected:
 
 class TriangleRenderer : public ShapeRenderer {
 public:
-	TriangleRenderer(Shader &shader, std::vector<float> vertices) : 
-	ShapeRenderer(shader), mVertices(vertices) {
+	TriangleRenderer(Shader &shader, std::vector<float> vertices, Attr::Color color) : 
+	ShapeRenderer(shader), mVertices(vertices), mColor(color)  {
 		this->initShape();
 	}
 	void drawShape();
 	std::vector<float> mVertices;
+	Attr::Color mColor;
 protected:
 	void initShape();
 };
