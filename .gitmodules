@@ -1,7 +1,3 @@
-[submodule "gulua/external/assimp"]
-	path = gulua/external/assimp
-	url = https://github.com/assimp/assimp.git
-    branch = master
 [submodule "gulua/external/glfw"]
 	path = gulua/external/glfw
 	url = https://github.com/glfw/glfw.git
@@ -13,10 +9,6 @@
 [submodule "gulua/external/stb"]
 	path = gulua/external/stb
 	url = https://github.com/nothings/stb.git
-    branch = master
-[submodule "gulua/external/bullet"]
-	path = gulua/external/bullet
-	url = https://github.com/bulletphysics/bullet3.git
     branch = master
 [submodule "gulua/external/glad"]
 	path = gulua/external/glad
