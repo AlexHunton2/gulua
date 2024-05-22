@@ -11,6 +11,7 @@ Inspiration of design was taken from different projects:
 This project is particularly thankful to Processing and GMod as it serves as a a love letter to both as they were instrumental in my computer science journey.
 
 ## Dependencies:
+The following are the submodules of this project located in `gulua/external`
 * [Lua](https://www.lua.org) - User inputted code
 * [glad](https://github.com/Dav1dde/glad) - OpenGL Function Loader
 * [glfw](https://github.com/glfw/glfw) - Window and Input

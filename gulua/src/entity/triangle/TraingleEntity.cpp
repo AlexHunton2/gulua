@@ -68,6 +68,7 @@ void TriangleEntity::setVertices(std::shared_ptr<std::vector<Attr::Point>> verti
 std::shared_ptr<Attr::Color> TriangleEntity::getColor() {
 	auto attr_ptr = std::static_pointer_cast<Attr::Color>(mAttrMap["color"]);
 	if (attr_ptr == nullptr) {
+		// default
 		std::shared_ptr<Attr::Color> color = std::make_shared<Attr::Color>();
 		setColor(color);
 		return color;
