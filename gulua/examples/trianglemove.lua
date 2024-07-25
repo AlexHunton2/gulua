@@ -1,3 +1,6 @@
+-- trianglemove.lua
+-- Simple movable triangle
+
 local triangle1 = entitylib.create("Triangle")
 triangle1:set_vertices(Point(200, 200), Point(300, 300), Point(200, 300))
 triangle1:set_color(Color(255, 218, 76, 80))

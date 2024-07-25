@@ -9,7 +9,16 @@ std::shared_ptr<EntityRegistry> EntityRegistry::getInstance() noexcept {
 
 std::string EntityRegistry::add(std::shared_ptr<Entity> ent) noexcept {
 	std::string id = util_generateid();
-	std::string key = std::string(typeid(*ent).name()) + "@" + id;
+
+	// getting type
+	const std::type_info& typeInfo = typeid(*ent);
+	int status = 0;
+    char* demangled = abi::__cxa_demangle(typeInfo.name(), nullptr, nullptr, &status);
+    std::string result(demangled ? demangled : typeInfo.name());
+    free(demangled);
+    std::string type = result;
+
+	std::string key = type + "@" + id;
 	mEntities.insert({key, ent});
 	mEntityOrder.push_back(key);
 	ent->setID(key);

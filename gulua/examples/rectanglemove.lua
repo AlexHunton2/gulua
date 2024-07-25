@@ -1,3 +1,7 @@
+-- rectanglemove.lua
+-- Examples demostrates: creating a objects (square, movable rectangle, triangle),
+-- coloring, and ordering of objects (newest object are on the front)
+
 local rectangle2 = entitylib.create("Rectangle")
 rectangle2:set_position(Point(500, 500))
 rectangle2:set_height(100)

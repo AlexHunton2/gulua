@@ -9,6 +9,7 @@
 #include <list>
 #include <unordered_set>
 #include <typeinfo>
+#include <cxxabi.h>
 
 #include "entity/Entity.hpp"
 #include "util/util.hpp"

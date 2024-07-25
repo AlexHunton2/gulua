@@ -16,7 +16,7 @@
 
 #include "util/util.hpp"
 
-#define ENT_STR_SIZE 32
+#define ENT_STR_SIZE 64
 
 typedef struct LuaEntity {
 	char id[ENT_STR_SIZE]; // Index to EntityRegistery
