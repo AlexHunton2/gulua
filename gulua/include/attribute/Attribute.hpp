@@ -28,6 +28,10 @@ typedef struct Color : Attribute {
 	int a = 80; // 0 to 100
 } Color;
 
+typedef struct Integer : Attribute {
+	int _int = 0;
+} Integer;
+
 }
 
 #endif

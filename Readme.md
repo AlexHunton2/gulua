@@ -50,6 +50,11 @@ make
 In the build folder, you are able to run some of the examples provided:
 
 ```bash
+cd gulua
+./gulua <relative location of lua file> 
+```
+Example:
+```bash
 cd gulua && ./gulua ../../gulua/examples/trianglemove.lua && cd ..  
 ```
 ** Must be in the gulua folder while running the program so the shaders can find themselves.

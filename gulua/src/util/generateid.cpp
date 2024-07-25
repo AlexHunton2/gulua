@@ -1,18 +1,21 @@
 #include "util/util.hpp"
 
-int util_generateid() {
-	const int ID_SIZE = 5;
-	srand(time(0));
+std::string util_generateid() {
+	const char charset[] =
+        "0123456789"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "abcdefghijklmnopqrstuvwxyz";
+    const size_t max_index = sizeof(charset) - 1;
 
-	int id;
-	int id_nums[ID_SIZE];
+    // Random number generator
+    std::random_device rd;
+    std::mt19937 generator(rd());
+    std::uniform_int_distribution<> distribution(0, max_index);
 
-	id = 0;
-    for (int i = 0; i < ID_SIZE; i++) {
-    	id_nums[i] = rand()%10 + 1;
+    std::string randomString;
+    for (int i = 0; i < 5; ++i) {
+        randomString += charset[distribution(generator)];
     }
-    for (int i = 0; i < ID_SIZE; i++) {
-    	id = id + (id_nums[i] * pow(10, i));
-    }
-	return id;
+
+    return randomString;
 }

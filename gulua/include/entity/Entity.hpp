@@ -29,7 +29,7 @@ public:
 	bool isInitalized() { return mInitalized; }
 	void setID(std::string id) { this->id = id; }
 	std::string getID() { return this->id; }	
-	~Entity() {}
+	virtual ~Entity() = default;
 protected:
 	Entity();
 	bool mInitalized = false;
@@ -37,17 +37,43 @@ protected:
 	std::map<std::string, std::shared_ptr<Attr::Attribute>> mAttrMap;
 };
 
-class TriangleEntity : public Entity {
+class PolygonEntity : public Entity {
 public:
-	TriangleEntity() : Entity(), mRenderer(nullptr) {}
-	void init();
-	void draw();
-	std::shared_ptr<Attr::PointVec> getVertices();
-	void setVertices(std::shared_ptr<std::vector<Attr::Point>> vertices);
+	PolygonEntity(int edges) : Entity(), mEdges(edges), mRenderer(nullptr) {}
+	virtual ~PolygonEntity() = default;
+	virtual void init() {};
+	virtual void draw() {};
 	std::shared_ptr<Attr::Color> getColor();
 	void setColor(std::shared_ptr<Attr::Color> color);
-private:
-	std::shared_ptr<GuluaResources::TriangleRenderer> mRenderer;
+	int mEdges;
+protected:
+	std::shared_ptr<GuluaResources::PolygonRenderer> mRenderer;
+};
+
+class TriangleEntity : public PolygonEntity  {
+public:
+	TriangleEntity() : PolygonEntity(3) {}
+	~TriangleEntity() {}
+	void init() override;
+	void draw() override;
+	std::shared_ptr<Attr::PointVec> getVertices();
+	void setVertices(std::shared_ptr<std::vector<Attr::Point>> vertices);
+	const int mEdges = 3;
+};
+
+class RectangleEntity : public PolygonEntity {
+public:
+	RectangleEntity() : PolygonEntity(4) {}
+	~RectangleEntity() {}
+	void init() override;
+	void draw() override;
+	std::shared_ptr<Attr::Point> getPosition();
+	void setPosition(std::shared_ptr<Attr::Point> pos);
+	std::shared_ptr<Attr::Integer> getWidth();
+	void setWidth(std::shared_ptr<Attr::Integer> width);
+	std::shared_ptr<Attr::Integer> getHeight();
+	void setHeight(std::shared_ptr<Attr::Integer> height);
+	const int mEdges = 4;
 };
 
 #endif

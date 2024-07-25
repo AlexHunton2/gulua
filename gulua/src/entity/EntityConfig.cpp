@@ -11,5 +11,11 @@ int init_ent_type_map() {
 	tri->create_func = luaEnts::_triangle::_create;
 	ent_type_map.insert({"Triangle", tri});
 
+	// Rectangle
+	std::shared_ptr<EntityType> rect = std::make_shared<EntityType>();
+	rect->luaopen_entlib = luaopen_rectanglelib;
+	rect->create_func = luaEnts::_rectangle::_create;
+	ent_type_map.insert({"Rectangle", rect});
+
 	return GULUA_OK;
 }

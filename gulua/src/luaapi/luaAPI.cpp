@@ -18,7 +18,7 @@ lua_State* luaAPI::loadLua(const char *fileName) {
   }
   for (auto const&atrr_pair : attr_type_map) {
   	std::string id = atrr_pair.first;
-  	util_lowercase(&id);
+  	//util_lowercase(&id);
   	luaL_requiref(luaState, id.c_str(), atrr_pair.second->luaopen_entlib, 1);
   }
 

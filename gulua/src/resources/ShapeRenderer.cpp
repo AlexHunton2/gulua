@@ -15,6 +15,7 @@ ShapeRenderer::~ShapeRenderer() {
 }
 
 void TriangleRenderer::drawShape() {
+    GLenum err = glGetError();
 	this->mShader.Use();
     mShader.SetVector4f("color", DIV_255F(mColor.r), DIV_255F(mColor.g), DIV_255F(mColor.b), DIV_100F(mColor.a));
 
@@ -27,11 +28,11 @@ void TriangleRenderer::drawShape() {
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-    GLenum err = glGetError();
+    err = glGetError();
     if (err != GL_NO_ERROR) {
         throw std::runtime_error(
-            std::string("TriangleRenderer Draw Shape Failure | GLError: %d", 
-            err));
+            util_format("TriangleRenderer Draw Shape Failure | GLError: %d", err)
+        );
     }
 }
 
@@ -60,6 +61,7 @@ void TriangleRenderer::initShape() {
 
 void PolygonRenderer::drawShape() {
     this->mShader.Use();
+    mShader.SetVector4f("color", DIV_255F(mColor.r), DIV_255F(mColor.g), DIV_255F(mColor.b), DIV_100F(mColor.a));
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), 

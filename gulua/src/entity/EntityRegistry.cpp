@@ -8,16 +8,8 @@ std::shared_ptr<EntityRegistry> EntityRegistry::getInstance() noexcept {
 }
 
 std::string EntityRegistry::add(std::shared_ptr<Entity> ent) noexcept {
-	int id;
-	for (int _ = 0; _ < 100; _++) {
-		id = util_generateid();
-		if (mIds.count(id) == 0) {
-	    	mIds.insert(id);
-	    	break;
-		}
-	}
-
-	std::string key = std::string(typeid(*ent).name()) + "@" + std::to_string(id);
+	std::string id = util_generateid();
+	std::string key = std::string(typeid(*ent).name()) + "@" + id;
 	mEntities.insert({key, ent});
 	ent->setID(key);
 	return key;

@@ -11,6 +11,7 @@ int init_attr_type_map() {
 	pt->to_string = luaAttrs::point::to_string;
 	attr_type_map.insert({"Point", pt});
 
+	// Color
 	std::shared_ptr<AttributeType> clr = std::make_shared<AttributeType>();
 	clr->luaopen_entlib = luaopen_colorlib;
 	clr->to_string = luaAttrs::color::to_string;
