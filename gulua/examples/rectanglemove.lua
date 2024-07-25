@@ -1,14 +1,13 @@
-local rectangle1 = entitylib.create("Rectangle")
--- set_vertices()
-rectangle1:set_position(Point(200, 200))
-rectangle1:set_color(Color(255, 218, 76, 80))
-rectangle1:set_height(100)
-rectangle1:set_width(200)
-
 local rectangle2 = entitylib.create("Rectangle")
 rectangle2:set_position(Point(500, 500))
 rectangle2:set_height(100)
 rectangle2:set_width(100)
+
+local rectangle1 = entitylib.create("Rectangle")
+rectangle1:set_position(Point(200, 200))
+rectangle1:set_color(Color(255, 218, 76, 80))
+rectangle1:set_height(100)
+rectangle1:set_width(200)
 
 local triangle = entitylib.create("Triangle")
 triangle:set_vertices(Point(100, 100), Point(200, 200), Point(100, 200))

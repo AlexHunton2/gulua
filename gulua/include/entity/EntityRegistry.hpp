@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <list>
 #include <unordered_set>
 #include <typeinfo>
 
@@ -18,6 +19,7 @@ private:
 	EntityRegistry();
 
 	std::map<std::string, std::shared_ptr<Entity>> mEntities;
+	std::list<std::string> mEntityOrder;
 public:
 	static std::shared_ptr<EntityRegistry> getInstance() noexcept;
 	std::string add(std::shared_ptr<Entity> ent) noexcept;
