@@ -81,8 +81,7 @@ void PolygonRenderer::drawShape() {
     GLenum err = glGetError();
     if (err != GL_NO_ERROR) {
         throw std::runtime_error(
-            std::string("PolygonRenderer Draw Shape Failure | GLError: %d", 
-            err));
+        util_format("PolygonRenderer Draw Shape Failure | GLError: %d", err));
     }
 }
 

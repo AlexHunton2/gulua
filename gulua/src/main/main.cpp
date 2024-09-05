@@ -19,6 +19,9 @@
 #include "entity/EntityRegistry.hpp"
 #include "entity/Entity.hpp"
 
+// FontFace
+#include "resources/FontFace.hpp"
+
 void keypress_callback(GLFWwindow* window, unsigned int codepoint) {
     std::shared_ptr<HookRegistry> hook_reg = HookRegistry::getInstance();
     hook_reg->callAll("KeyPress", "i", codepoint);

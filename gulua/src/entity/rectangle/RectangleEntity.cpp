@@ -9,8 +9,7 @@ void RectangleEntity::init() {
 	}
 
 	GuluaResources::Shader shader = GuluaResources::ResourceManager::GetShader("shape");
-	unsigned int unsignedNegOne = -1;
-	if (shader.ID == unsignedNegOne) {
+	if (shader.ID == (unsigned int)-1) {
 		shader = GuluaResources::ResourceManager::LoadShader("shaders/shape.vs", "shaders/shape.frag", nullptr, "shape");
 	}
 
@@ -40,11 +39,23 @@ void RectangleEntity::init() {
 	);
 
 	if (mRenderer == nullptr) {
-		fprintf(stderr, "Panic! Failed initalize PolygonEntity due to failed renderer\n");
+		fprintf(stderr, "Panic! Failed initalize PolygonEntity due to failed shape-renderer\n");
 		exit(1);
 	}
 
 	mRenderer->initShape();
+
+	mTextRenderer = std::make_shared<GuluaResources::TextRenderer>(
+		"../../gulua/fonts/arial.ttf",
+		14,
+		"(C) Hello World HggH! (test)"
+	);
+
+	if (mTextRenderer == nullptr) {
+		fprintf(stderr, "Panic! Failed initalize PolygonEntity due to failed text-renderer\n");
+	}
+
+	mTextRenderer->initText();
 
 	mInitalized = true;
 }
@@ -68,6 +79,8 @@ void RectangleEntity::draw() {
 
 	mRenderer->mVertices = gl_vertices;
 	mRenderer->drawShape();
+
+	mTextRenderer->drawText();
 }
 
 std::shared_ptr<Attr::Point> RectangleEntity::getPosition() {

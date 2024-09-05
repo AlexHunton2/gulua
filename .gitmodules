@@ -17,3 +17,6 @@
 [submodule "gulua/external/lua"]
 	path = gulua/external/lua
 	url = https://github.com/lua/lua.git
+[submodule "gulua/external/freetype"]
+	path = gulua/external/freetype
+	url = https://gitlab.freedesktop.org/freetype/freetype.git

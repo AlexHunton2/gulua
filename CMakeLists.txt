@@ -6,6 +6,8 @@ option(GLFW_BUILD_EXAMPLES OFF)
 option(GLFW_BUILD_TESTS OFF)
 add_subdirectory(gulua/external/glfw)
 
+find_package(Freetype REQUIRED)
+
 if(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /std:c++latest")
 else()
@@ -23,7 +25,8 @@ include_directories(gulua/include/
                     gulua/external/glm/
                     gulua/external/stb/
                     gulua/external/lua
-                    )
+                    gulua/external/freetype/include
+)
 
 # lua
 SET (LUA_DIR "gulua/external/lua")
@@ -88,7 +91,7 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCE} ${PROJECT_HEADERS}
                                ${PROJECT_SHADERS} ${PROJECT_CONFIGS}
                                ${VENDORS_SOURCE})
 target_link_libraries(${PROJECT_NAME} glfw
-                      ${GLFW_LIBRARIES} ${GLAD_LIBRARIES} lua)
+                      ${GLFW_LIBRARIES} ${GLAD_LIBRARIES} lua ${FREETYPE_LIBRARIES})
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
 

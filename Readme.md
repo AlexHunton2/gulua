@@ -17,6 +17,7 @@ The following are the submodules of this project located in `gulua/external`
 * [glfw](https://github.com/glfw/glfw) - Window and Input
 * [glm](https://github.com/g-truc/glm) - OpenGL Math
 * [stb](https://github.com/nothings/stb) - Texture Loading
+* [FreeType](https://gitlab.freedesktop.org/freetype/freetype) - Font/Text Loading
 
 ## Getting Started
 

@@ -16,6 +16,7 @@ extern "C" {
 #include "resources/ShapeRenderer.hpp"
 #include "resources/ResourceManager.hpp"
 #include "resources/Shader.hpp"
+#include "resources/TextRenderer.hpp"
 #include <vector>
 #include "gulua.hpp"
 #include <memory>
@@ -74,6 +75,8 @@ public:
 	std::shared_ptr<Attr::Integer> getHeight();
 	void setHeight(std::shared_ptr<Attr::Integer> height);
 	const int mEdges = 4;
+protected:
+	std::shared_ptr<GuluaResources::TextRenderer> mTextRenderer;
 };
 
 #endif
