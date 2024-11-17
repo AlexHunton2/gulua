@@ -16,4 +16,6 @@ int init_attr_type_map() {
 	clr->luaopen_entlib = luaopen_colorlib;
 	clr->to_string = luaAttrs::color::to_string;
 	attr_type_map.insert({"Color", clr});
+
+    return GULUA_OK;
 }
