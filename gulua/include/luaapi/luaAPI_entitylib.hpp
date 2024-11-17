@@ -19,13 +19,13 @@ extern "C" {
 
 namespace luaAPI {
 namespace _entitylib {
-	int _create(lua_State *L);
-	int _delete(lua_State *L);
-	const struct luaL_Reg entitylib [] = {
+    int _create(lua_State *L);
+    int _delete(lua_State *L);
+    const struct luaL_Reg entitylib [] = {
         {"create", _create},
         {"delete", _delete},
         {NULL, NULL}  /* sentinel */
-	};
+    };
 }
 }
 

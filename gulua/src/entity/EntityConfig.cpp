@@ -3,7 +3,7 @@
 std::map<std::string, std::shared_ptr<EntityType>> ent_type_map = std::map<std::string, std::shared_ptr<EntityType>>();
 
 int init_ent_type_map() {
-	// Register Entiy Types
+    // Register Entiy Types
 
 	// Triangle
 	std::shared_ptr<EntityType> tri = std::make_shared<EntityType>();

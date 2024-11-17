@@ -25,12 +25,12 @@ extern "C" {
 #include "luaapi/luaDefs.hpp"
 
 namespace luaAPI {
-	lua_State* loadLua(const char* fileName);
-	void closeLua(lua_State *L);
-	void stackDump(lua_State *L);
-	void error(lua_State *L, const char *fmt, ...);
-	void callGlobalFunction(lua_State *L, const char *func, const char *sig, 
-		...);
+    lua_State* loadLua(const char* fileName);
+    void closeLua(lua_State *L);
+    void stackDump(lua_State *L);
+    void error(lua_State *L, const char *fmt, ...);
+    void callGlobalFunction(lua_State *L, const char *func, const char *sig, 
+        ...);
 }
 
 #endif

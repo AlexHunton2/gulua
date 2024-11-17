@@ -6,23 +6,23 @@
 using namespace GuluaResources;
 
 ShapeRenderer::ShapeRenderer(Shader &shader) {
-	this->mShader = shader;
+    this->mShader = shader;
 }
 
 ShapeRenderer::~ShapeRenderer() {
-	glDeleteVertexArrays(1, &mVAO);
+    glDeleteVertexArrays(1, &mVAO);
     glDeleteBuffers(GL_ARRAY_BUFFER, &mVBO);
 }
 
 void TriangleRenderer::drawShape() {
     GLenum err = glGetError();
-	this->mShader.Use();
-    mShader.SetVector4f("color", DIV_255F(mColor.r), DIV_255F(mColor.g), DIV_255F(mColor.b), DIV_100F(mColor.a));
+    this->mShader.Use();
+    mShader.SetVector4f("color", DIV_255F(mColor->r), DIV_255F(mColor->g), DIV_255F(mColor->b), DIV_100F(mColor->a));
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), &mVertices[0]);
 
-	glBindVertexArray(this->mVAO);
+    glBindVertexArray(this->mVAO);
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
     glBindVertexArray(0);
@@ -61,7 +61,7 @@ void TriangleRenderer::initShape() {
 
 void PolygonRenderer::drawShape() {
     this->mShader.Use();
-    mShader.SetVector4f("color", DIV_255F(mColor.r), DIV_255F(mColor.g), DIV_255F(mColor.b), DIV_100F(mColor.a));
+    mShader.SetVector4f("color", DIV_255F(mColor->r), DIV_255F(mColor->g), DIV_255F(mColor->b), DIV_100F(mColor->a));
 
     glBindBuffer(GL_ARRAY_BUFFER, mVBO);
     glBufferSubData(GL_ARRAY_BUFFER, 0, mVertices.size() * sizeof(mVertices[0]), 

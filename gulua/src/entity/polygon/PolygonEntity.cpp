@@ -1,16 +1,27 @@
 #include "entity/Entity.hpp"
 
-std::shared_ptr<Attr::Color> PolygonEntity::getColor() {
-	auto attr_ptr = std::static_pointer_cast<Attr::Color>(mAttrMap["color"]);
-	if (attr_ptr == nullptr) {
-		// default
-		std::shared_ptr<Attr::Color> color = std::make_shared<Attr::Color>();
-		setColor(color);
-		return color;
-	}
-	return attr_ptr;
-}
+void PolygonEntity::init() {
+    if (mInitalized) {
+        return;
+    }
 
-void PolygonEntity::setColor(std::shared_ptr<Attr::Color> color) {
-	mAttrMap["color"] = color;
+    mShader = GuluaResources::ResourceManager::GetShader("shape");
+    if (mShader.ID == (unsigned int)-1) {
+        mShader = GuluaResources::ResourceManager::LoadShader("shaders/shape.vs", "shaders/shape.frag", nullptr, "shape");
+    }
+
+    mTextRenderer = std::make_shared<GuluaResources::TextRenderer>(
+        "../../gulua/fonts/arial.ttf",
+        50,
+        getAttr<Attr::String>("text")->_str.c_str(),
+        getAttr<Attr::Color>("text-color")
+    );
+
+    if (mTextRenderer == nullptr) {
+        fprintf(stderr, "Panic! Failed initalize PolygonEntity due to failed text-renderer\n");
+        mInitalized = false;
+        return;
+    }
+
+    mTextRenderer->initText();
 }

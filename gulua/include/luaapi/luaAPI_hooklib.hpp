@@ -21,12 +21,12 @@ extern "C" {
 
 namespace luaAPI {
 namespace _hooklib {
-	// Args: "Identifier, Hookname, Function"
-	int register_hook(lua_State *L);
-	const struct luaL_Reg hooklib [] = {
+    // Args: "Identifier, Hookname, Function"
+    int register_hook(lua_State *L);
+    const struct luaL_Reg hooklib [] = {
         {"register_hook", register_hook},
         {NULL, NULL}  /* sentinel */
-	};
+    };
 }
 }
 
