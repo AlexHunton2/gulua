@@ -7,6 +7,8 @@
 #include <math.h>
 #include <stdarg.h>
 #include <random>
+#include <memory>
+#include <cstring>
 
 /* generateid.cpp */
 std::string util_generateid();

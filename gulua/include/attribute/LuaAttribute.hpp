@@ -12,6 +12,7 @@ extern "C" {
 #include <cstddef>
 #include <iostream>
 #include <map>
+#include <memory>
 
 #include "luaapi/luaDefs.hpp"
 #include "attribute/Attribute.hpp"
